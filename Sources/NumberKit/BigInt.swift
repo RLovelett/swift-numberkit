@@ -125,7 +125,7 @@ public struct BigInt: Hashable,
   
   /// Internal primary constructor. It removes superfluous words and normalizes the
   /// representation of zero.
-  internal init(words: [UInt32], negative: Bool) {
+  public init(words: [UInt32], negative: Bool) {
     var words = words
     while words.count > 1 && words[words.count - 1] == 0 {
       words.removeLast()
@@ -136,7 +136,7 @@ public struct BigInt: Hashable,
   
   /// Internal primary constructor. It removes superfluous words and normalizes the
   /// representation of zero.
-  internal init(words: [UInt], negative: Bool) {
+  public init(words: [UInt], negative: Bool) {
     var uwords = [UInt32]()
     uwords.reserveCapacity(words.count * 2)
     for word in words {
